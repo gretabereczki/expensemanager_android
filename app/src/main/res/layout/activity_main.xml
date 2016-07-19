@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0e8e8"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".ListActivity">
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="114dp"
+        android:width="350px"
+        android:height="200px"
+        android:background="#e55744"
+        android:drawableTop="@drawable/add_icon"
+        android:elegantTextHeight="false"
+        android:enabled="true"
+        android:gravity="top|bottom|center"
+        android:onClick="openAddActivity"
+        android:text="Add item"
+        android:textColor="#ffffff"
+        android:textSize="22dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button"
+        android:layout_below="@+id/button"
+        android:layout_marginTop="23dp"
+        android:width="350px"
+        android:height="200px"
+        android:background="#0cc0eb"
+        android:drawableTop="@drawable/view_icon"
+        android:elegantTextHeight="false"
+        android:gravity="top|bottom|center"
+        android:onClick="openListActivity"
+        android:text="View expenses"
+        android:textColor="#ffffff"
+        android:textSize="22dp" />
+</RelativeLayout>
