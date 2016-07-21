@@ -25,8 +25,8 @@ public class ExpenseList extends Activity {
         db = new DatabaseHelper(this);
 
         databaseData = db.getData();
-        String[] from = {"itemname", "price"};
-        int[] to = {R.id.textView, R.id.textView2};
+        String[] from = {"itemname", "price", "category", "currency"};
+        int[] to = {R.id.textView, R.id.textView2, R.id.textView3, R.id.textView9};
 
         adapter = new SimpleCursorAdapter(this, R.layout.activity_listitem, databaseData, from, to, 0);
 

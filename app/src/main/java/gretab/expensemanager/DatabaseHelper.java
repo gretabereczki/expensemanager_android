@@ -18,6 +18,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String ROW_ID = "_id";
     public static final String COLUMN1 = "itemname";
     public static final String COLUMN2 = "price";
+    public static final String COLUMN3 = "category";
+    public static final String COLUMN4 = "currency";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -30,7 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE  " + TABLE_NAME + "( "
                 + ROW_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN1 + " TEXT,"
-                + COLUMN2 + " INTEGER" + " )");
+                + COLUMN2 + " INTEGER," + COLUMN3 + " TEXT, " + COLUMN4 + " TEXT" + ")");
 
     }
 
@@ -39,18 +41,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
     }
 
-    public boolean insertData(String name, Double price) {
+    public boolean insertData(String name, Double price, String category, String currency) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues content = new ContentValues();
         content.put(COLUMN1, name);
         content.put(COLUMN2, price);
+        content.put(COLUMN3, category);
+        content.put(COLUMN4, currency);
         long result = db.insert("expenses", null, content);
         return result != -1;
     }
 
     public Cursor getData() {
-        Cursor cursor = getReadableDatabase().query("expenses",
-                new String[]{ROW_ID, COLUMN1, COLUMN2},
+        Cursor cursor = getReadableDatabase().query(TABLE_NAME,
+                new String[]{ROW_ID, COLUMN1, COLUMN2, COLUMN3, COLUMN4},
                 null, null, null, null, null);
         return cursor;
 
