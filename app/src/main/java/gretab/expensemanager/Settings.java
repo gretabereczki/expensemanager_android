@@ -38,5 +38,6 @@ public class Settings extends Activity {
         String category = dropDown.getItemAtPosition(dropDown.getSelectedItemPosition()).toString();
         edit.putString("currencyType", category);
         edit.commit();
+        db.updateCurrency(category);
     }
 }

@@ -1,48 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#d95444">
+    android:background="#d95444"
+    android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/expense_list"
-        android:layout_width="fill_parent"
-        android:layout_height="450dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="false"
-        android:layout_below="@+id/textView5"
-        android:background="#f0e8e8"></ListView>
+    <!-- Icons made by Hanan from www.flaticon.com  -->
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/textView6"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="36dp"
-        android:text="Name"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#433d3d"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="96dp"
-        android:layout_marginRight="96dp"
-        android:layout_marginTop="31dp"
-        android:text="Price"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#433d3d"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight=".60"
+            android:text="Name"
+            android:textColor="#433d3d"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight=".40"
+            android:text="Price"
+            android:textColor="#433d3d"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/expense_list"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:background="#f0e8e8"></ListView>
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@drawable/add"
+            app:borderWidth="0dp"
+            app:elevation="6dp"
+            app:fabSize="normal"
+            app:layout_anchorGravity="end"
+            app:pressedTranslationZ="12dp"
+            android:onClick="openAddActivity"
+            app:backgroundTint="#d95444"/>
+
+    </FrameLayout>
+
+
+</LinearLayout>

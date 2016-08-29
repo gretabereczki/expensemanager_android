@@ -12,20 +12,17 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".ExpenseAdd"
-            android:label="@string/app_name"></activity>
-
+            android:name=".ExpenseAdd"></activity>
         <activity
-            android:name=".ExpenseList"
-            android:label="@string/app_name"></activity>
+            android:name=".ExpenseList"></activity>
         <activity
-            android:name=".Settings"
-            android:label="@string/app_name"></activity>
+            android:name=".Settings"></activity>
+        <activity
+            android:name=".Statistics"></activity>
     </application>
 
 </manifest>

@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     public void openAddActivity(View view) {
@@ -31,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openSettingsActivity(View view) {
         Intent intent = new Intent(MainActivity.this, Settings.class);
+        startActivity(intent);
+    }
+
+    public void openStatisticsActivity(View view) {
+        Intent intent = new Intent(MainActivity.this, Statistics.class);
         startActivity(intent);
     }
 }
