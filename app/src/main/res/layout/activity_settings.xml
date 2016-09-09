@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#f0e8e8">
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2">
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="40dp"
+        android:layout_margin="20dp"
         android:text="Currency"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#433d3d"
@@ -24,20 +26,35 @@
         android:id="@+id/spinner2"
         android:layout_width="150dp"
         android:layout_height="35dp"
-        android:layout_alignBottom="@+id/textView8"
-        android:layout_marginLeft="60dp"
-        android:layout_marginStart="60dp"
-        android:layout_toEndOf="@+id/textView8"
-        android:layout_toRightOf="@+id/textView8" />
+        android:layout_margin="20dp" />
+
+    <TextView
+        android:id="@+id/balanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Initial balance"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#433d3d"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText3"
+            android:layout_margin="20dp" />
+
+
+    </GridLayout>
 
     <Button
         android:id="@+id/button5"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/spinner2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="119dp"
+        android:layout_gravity="center_horizontal"
         android:background="#d95444"
         android:onClick="saveSettings"
-        android:text="Save" />
-</RelativeLayout>
+        android:text="Save"
+        android:layout_marginTop="45dp" />
+</LinearLayout>
