@@ -1,21 +1,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f0e8e8"
     android:weightSum="1"
-    tools:context=".ListActivity">
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:minHeight="?attr/actionBarSize"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:titleTextColor="@android:color/white"
-        android:background="?attr/colorPrimary">
-    </android.support.v7.widget.Toolbar>
-
+    tools:context=".MainActivity">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/linearLayout"
@@ -30,11 +20,11 @@
             android:layout_margin="10dp"
             android:layout_weight=".50"
             android:background="@android:color/transparent"
-            android:drawableTop="@drawable/plus"
+            android:drawableTop="@drawable/material_add"
             android:onClick="openAddActivity"
             android:text="Add item"
             android:textColor="#000000"
-            android:textSize="22dp" />
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/button2"
@@ -43,19 +33,19 @@
             android:layout_margin="10dp"
             android:layout_weight=".50"
             android:background="@android:color/transparent"
-            android:drawableTop="@drawable/list"
+            android:drawableTop="@drawable/material_list"
             android:onClick="openListActivity"
             android:text="Expenses"
             android:textColor="#000000"
-            android:textSize="22dp" />
+            android:textSize="20dp" />
 
     </LinearLayout>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/linearLayout"
-        android:id="@+id/linearLayout2">
+        android:layout_below="@id/linearLayout">
 
         <Button
             android:id="@+id/button3"
@@ -64,11 +54,11 @@
             android:layout_margin="10dp"
             android:layout_weight=".40"
             android:background="@android:color/transparent"
-            android:drawableTop="@drawable/settings"
+            android:drawableTop="@drawable/material_settings"
             android:onClick="openSettingsActivity"
             android:text="Settings"
             android:textColor="#000000"
-            android:textSize="22dp" />
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/button4"
@@ -77,23 +67,23 @@
             android:layout_margin="10dp"
             android:layout_weight=".40"
             android:background="@android:color/transparent"
-            android:drawableTop="@drawable/chart"
+            android:drawableTop="@drawable/material_statistics"
             android:onClick="openStatisticsActivity"
             android:text="Statistics"
             android:textColor="#000000"
-            android:textSize="22dp" />
+            android:textSize="20dp" />
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/textView12"
         android:layout_above="@+id/linearLayout2"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="791dp" />
+        android:layout_marginLeft="791dp"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 
 </RelativeLayout>

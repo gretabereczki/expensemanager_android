@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">ExpenseManager</string>
+    <string name="app_name"></string>
+    <string name="action_favorite">Fav </string>
+    <string name="action_settings">Set</string>
 </resources>

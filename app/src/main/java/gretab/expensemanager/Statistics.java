@@ -5,12 +5,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 /**
- * Created by Greta on 22/07/2016.
+ * The activity managing the statistics.
+ *
+ * @author Greta Bereczki
  */
 public class Statistics extends Activity {
 
@@ -23,13 +23,13 @@ public class Statistics extends Activity {
         setContentView(R.layout.activity_statistics);
         db = new DatabaseHelper(this);
         preferences = getSharedPreferences("Preferences", MODE_PRIVATE);
-        double initialBalance=Double.parseDouble(preferences.getString("balance", "0").toString());
+        double initialBalance = Double.parseDouble(preferences.getString("balance", "0").toString());
 
-        sum=(TextView)findViewById(R.id.textView11);
-        balance=(TextView)findViewById(R.id.balanceValue);
+        sum = (TextView) findViewById(R.id.textView11);
+        balance = (TextView) findViewById(R.id.balanceValue);
 
         sum.setText(Double.toString(db.getSpendings()));
-        balance.setText(Double.toString(initialBalance+db.getSpendings()));
+        balance.setText(Double.toString(initialBalance + db.getSpendings()));
     }
 
     public void openMainActivity(View view) {

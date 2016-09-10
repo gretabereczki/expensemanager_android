@@ -5,6 +5,13 @@
     android:background="#f0e8e8"
     android:orientation="vertical">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/addToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp" />
+
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
@@ -17,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:text="Expense"
-            android:textColor="#433d3d"
+            android:textColor="@color/colorPrimaryText"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -27,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:text="Income"
-            android:textColor="#433d3d"
+            android:textColor="@color/colorPrimaryText"
             android:textSize="20dp"
             android:textStyle="bold" />
     </RadioGroup>
@@ -44,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:text="Name"
-            android:textColor="#433d3d"
+            android:textColor="@color/colorPrimaryText"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -60,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:text="Price"
-            android:textColor="#433d3d"
+            android:textColor="@color/colorPrimaryText"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -76,7 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:text="Category"
-            android:textColor="#433d3d"
+            android:textColor="@color/colorPrimaryText"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -92,7 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:text="Date"
-            android:textColor="#433d3d"
+            android:textColor="@color/colorPrimaryText"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -103,7 +110,7 @@
             android:layout_margin="20dp"
             android:clickable="true"
             android:onClick="openCalendar"
-            android:textColor="#433d3d"
+            android:textColor="@color/colorPrimaryText"
             android:textSize="20dp" />
 
     </GridLayout>
@@ -113,8 +120,7 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="45dp"
-        android:background="#d95444"
+        android:background="@color/colorAccent"
         android:onClick="addData"
         android:text="Add item"
         android:textColor="#ffffff" />

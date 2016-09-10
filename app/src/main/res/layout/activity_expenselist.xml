@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#d95444"
+    android:background="@color/colorAccent"
     android:orientation="vertical">
 
     <!-- Icons made by Hanan from www.flaticon.com  -->
@@ -20,7 +20,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight=".60"
             android:text="Name"
-            android:textColor="#433d3d"
+            android:textColor="#ffffff"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -31,7 +31,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight=".40"
             android:text="Price"
-            android:textColor="#433d3d"
+            android:textColor="#ffffff"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -41,24 +41,26 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ListView
             android:id="@+id/expense_list"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:background="#f0e8e8"></ListView>
+
         <android.support.design.widget.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
+            android:onClick="openAddActivity"
             android:src="@drawable/add"
+            app:backgroundTint="@color/colorAccent"
             app:borderWidth="0dp"
             app:elevation="6dp"
             app:fabSize="normal"
             app:layout_anchorGravity="end"
-            app:pressedTranslationZ="12dp"
-            android:onClick="openAddActivity"
-            app:backgroundTint="#d95444"/>
+            app:pressedTranslationZ="12dp" />
 
     </FrameLayout>
 

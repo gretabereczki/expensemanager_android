@@ -67,20 +67,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public double getSpendings()
-    {
+    public double getSpendings() {
         Cursor cursor = getReadableDatabase().rawQuery(
                 "SELECT SUM(price) FROM expenses", null);
-        if(cursor.moveToFirst()) {
+        if (cursor.moveToFirst()) {
             return cursor.getDouble(0);
-        }
-        else return 0;
+        } else return 0;
     }
 
-    public void updateCurrency(String newCurrency)
-    {
+    public void updateCurrency(String newCurrency) {
         Cursor cursor = getReadableDatabase().rawQuery(
-                "UPDATE expenses SET currency='"+newCurrency+"'", null);
+                "UPDATE expenses SET currency='" + newCurrency + "'", null);
     }
 }
 

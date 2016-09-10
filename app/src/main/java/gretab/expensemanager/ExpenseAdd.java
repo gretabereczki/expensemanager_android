@@ -1,9 +1,14 @@
 package gretab.expensemanager;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -23,7 +28,7 @@ import java.util.Calendar;
  *
  * @author Greta Bereczki
  */
-public class ExpenseAdd extends Activity {
+public class ExpenseAdd extends AppCompatActivity {
 
     DatabaseHelper db;
     EditText nameText, priceText;
@@ -65,6 +70,36 @@ public class ExpenseAdd extends Activity {
         currency = preferences.getString("currencyType", "HUF");
 
         priceText.setHint(currency);
+
+
+        // set the toolbar as the app bar for the activity
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.addToolbar);
+        setSupportActionBar(myToolbar);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        // inflate menu entries
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.add_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_back:
+                Intent intent = new Intent(ExpenseAdd.this, MainActivity.class);
+                startActivity(intent);
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 
     public void addData(View view) {
@@ -84,7 +119,7 @@ public class ExpenseAdd extends Activity {
             Toast.makeText(ExpenseAdd.this, "Price must be a number!", Toast.LENGTH_LONG).show();
         }
 
-        if (isInserted = true)
+        if (isInserted == true)
             Toast.makeText(ExpenseAdd.this, "Data Inserted", Toast.LENGTH_LONG).show();
         else
             Toast.makeText(ExpenseAdd.this, "Data not Inserted", Toast.LENGTH_LONG).show();
